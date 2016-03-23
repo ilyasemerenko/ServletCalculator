@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet("/calculator")
-public class Servlet extends HttpServlet{
+public class CalculateServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        Calculator calc = new Calculator();
+        CalculatorAction calc = new CalculatorAction();
         PrintWriter writer = res.getWriter();
         String result = null;
         try {
@@ -20,5 +20,4 @@ public class Servlet extends HttpServlet{
         }
         writer.write("Hello from server! Your result is: " + result);
     }
-
 }

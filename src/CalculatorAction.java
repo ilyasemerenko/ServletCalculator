@@ -2,7 +2,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Calculator {
+public class CalculatorAction {
     private String operation;
 
     private List<Double> parseQuery(HttpServletRequest request){
