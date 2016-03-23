@@ -7,12 +7,9 @@ public class CalculatorAction {
 
     private List<Double> parseQuery(HttpServletRequest request){
         List<Double> operands = new ArrayList<>();
-        String query = request.getQueryString();
-        int splitIndex = query.indexOf("&");
-        operation = query.substring(query.indexOf("=")+1,splitIndex);
-        String operandsStr = query.substring(splitIndex+1);
-        String first = operandsStr.substring(operandsStr.indexOf("=")+1,operandsStr.indexOf("&"));
-        String second = operandsStr.substring(operandsStr.lastIndexOf("=")+1);
+        operation = request.getParameter("operation");
+        String first = request.getParameter("operand1");
+        String second = request.getParameter("operand2");
         try {
             operands.add(Double.valueOf(first));
             operands.add(Double.valueOf(second));
